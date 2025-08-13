@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models.core import AuditLog, Country, Currency, Industry, SystemSetting
+from .models import AuditLog, Country, Currency, Industry, SystemSetting
 
 
 @admin.register(Currency)

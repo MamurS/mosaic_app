@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models.entities import (
+from .models import (
     Entity,
     EntityContact,
     EntityFinancial,

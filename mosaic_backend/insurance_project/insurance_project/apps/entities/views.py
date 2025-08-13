@@ -1,6 +1,6 @@
 from rest_framework import filters, viewsets
 
-from .models.entities import (
+from .models import (
     Entity,
     EntityContact,
     EntityFinancial,

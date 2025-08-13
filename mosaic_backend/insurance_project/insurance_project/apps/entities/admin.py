@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models.entities import (
+from .models import (
     Entity,
     EntityContact,
     EntityFinancial,

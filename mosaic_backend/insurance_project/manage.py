@@ -2,11 +2,17 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from pathlib import Path
 
 
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'insurance_project.settings')
+    # Ensure inner project dir is on sys.path so 'apps.*' is importable
+    current_dir = Path(__file__).resolve().parent
+    project_dir = current_dir / 'insurance_project'
+    if str(project_dir) not in sys.path:
+        sys.path.insert(0, str(project_dir))
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

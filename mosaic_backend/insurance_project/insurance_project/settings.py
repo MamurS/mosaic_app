@@ -35,8 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # New modular apps (loaded before legacy api)
-    'insurance_project.apps.core',
-    'insurance_project.apps.entities',
+    'apps.core',
+    'apps.entities',
 
     # Legacy app (kept for compatibility during migration)
     'api',

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models.core import Country, Currency, Industry, User
+from .models import Country, Currency, Industry, User
 
 
 class UserSerializer(serializers.ModelSerializer):
