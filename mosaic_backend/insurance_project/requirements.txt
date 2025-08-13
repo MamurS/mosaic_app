@@ -1,0 +1,30 @@
+# Core Django framework
+Django==4.1.13
+# Django REST Framework for building APIs
+djangorestframework==3.14.0
+# CORS headers for cross-origin requests
+django-cors-headers==4.3.1
+# Django filtering for API endpoints
+django-filter==23.3
+# JWT authentication for REST API
+djangorestframework-simplejwt==5.3.0
+# Python timezone support
+pytz==2023.3
+# SQL parsing library (used by Django)
+sqlparse==0.4.4
+# ASGI reference implementation
+asgiref==3.7.2
+# Python JWT library (dependency of djangorestframework-simplejwt)
+PyJWT==2.8.0
+
+# ===== RENDER DEPLOYMENT PACKAGES =====
+# WSGI HTTP Server for Python (production server)
+gunicorn==21.2.0
+# Static file serving middleware
+whitenoise==6.5.0
+# Environment variable management
+python-decouple==3.8
+# Database URL parsing
+dj-database-url==2.1.0
+# Setup tools for pkg_resources (needed by simplejwt)
+setuptools==69.0.3
