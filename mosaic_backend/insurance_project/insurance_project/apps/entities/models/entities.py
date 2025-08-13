@@ -1,6 +1,6 @@
 from django.db import models
 
-from apps.core.models.core import BaseModel, Country, Currency, Industry
+from insurance_project.apps.core.models.core import BaseModel, Country, Currency, Industry
 
 
 class Entity(BaseModel):

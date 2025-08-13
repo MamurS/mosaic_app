@@ -5,6 +5,7 @@ import LoginPage from './components/auth/LoginPage';
 import Dashboard from './components/dashboard/Dashboard';
 import Clients from './components/clients/Clients';
 import ClientForm from './components/clients/ClientForm';
+import EntityList from './modules/entities/pages/EntityList';
 import Policies from './components/policies/Policies';
 import PolicyForm from './components/policies/PolicyForm';
 import Reports from './components/reports/Reports';
@@ -477,6 +478,12 @@ const AppContent = () => {
             onDeleteClient={handleDeleteClient}
             onRefresh={fetchClients}
           />
+        );
+      case 'entities':
+        return (
+          <div className="p-4 space-y-4">
+            <EntityList />
+          </div>
         );
       case 'policies':
         return (

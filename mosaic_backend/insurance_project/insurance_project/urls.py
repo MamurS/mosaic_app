@@ -20,8 +20,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Versioned v1 modular APIs
-    path('api/v1/core/', include('apps.core.urls')),
-    path('api/v1/entities/', include('apps.entities.urls')),
+    path('api/v1/core/', include('insurance_project.apps.core.urls')),
+    path('api/v1/entities/', include('insurance_project.apps.entities.urls')),
     # Keep legacy
     path('api/', include('api.urls')),
 ]

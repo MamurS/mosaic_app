@@ -50,6 +50,7 @@ const Navigation = ({
   const NAVIGATION_TABS = [
     { id: 'dashboard', label: 'Панель управления', hasAction: false },
     { id: 'clients', label: 'Клиенты', hasAction: true },
+    { id: 'entities', label: 'Сущности', hasAction: false },
     { id: 'policies', label: 'Полисы', hasAction: true },
     { id: 'reports', label: 'Отчеты', hasAction: false },
     { id: 'analytics', label: 'Аналитика', hasAction: false },
