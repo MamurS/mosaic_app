@@ -1,0 +1,9 @@
+{
+  "__source__": "ERP System.xlsx",
+  "columns": [
+    "Insured / Borrower "
+  ],
+  "mapping": {
+    "insured_borrower": "Insured / Borrower"
+  }
+}
