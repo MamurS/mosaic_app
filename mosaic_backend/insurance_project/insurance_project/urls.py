@@ -19,7 +19,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('api.urls')), # Add this line
+    # Versioned v1 modular APIs
+    path('api/v1/core/', include('apps.core.urls')),
+    path('api/v1/entities/', include('apps.entities.urls')),
+    # Keep legacy
+    path('api/', include('api.urls')),
 ]
 
 # insurance_project/urls.py
@@ -31,10 +35,8 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),
-    # Add these lines for token authentication
+urlpatterns += [
+    # JWT token endpoints
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

@@ -1,5 +1,6 @@
 // API Configuration
 export const API_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000/api';
+export const API_V1 = `${API_URL.replace(/\/$/, '')}/v1`;
 
 // Currency Options
 export const CURRENCIES = ['UZS', 'USD', 'EUR'];

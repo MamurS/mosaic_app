@@ -33,14 +33,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    # Your apps
+
+    # New modular apps (loaded before legacy api)
+    'apps.core',
+    'apps.entities',
+
+    # Legacy app (kept for compatibility during migration)
     'api',
-    
+
     # Third party apps
     'rest_framework',
     'corsheaders',
-    'rest_framework_simplejwt',    
+    'rest_framework_simplejwt',
     'django_filters',
 ]
 
@@ -106,6 +110,9 @@ TIME_ZONE = 'Asia/Tashkent'  # Uzbekistan timezone
 USE_I18N = True
 USE_TZ = True
 
+# Custom user model
+AUTH_USER_MODEL = 'core.User'
+
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -122,6 +129,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# isort/black basic configuration hints for editors (non-breaking)
+BLACK_LINE_LENGTH = 88
+ISORT_PROFILE = 'black'
 
 # Django REST Framework configuration
 REST_FRAMEWORK = {
