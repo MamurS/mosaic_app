@@ -1,144 +1,18 @@
 {
   "folders": [
-    { "name": "backend", "path": "mosaic_backend" },
-    { "name": "frontend", "path": "mosaic_frontend" }
+    { "name": "backend", "path": "backend" },
+    { "name": "frontend", "path": "frontend" }
   ],
   "settings": {
-    "files.exclude": {
-      "**/__pycache__": true,
-      "**/.pytest_cache": true,
-      "**/.mypy_cache": true,
-      "**/.ruff_cache": true,
-      "**/.venv": true,
-      "**/build": true,
-      "**/dist": true,
-      "**/node_modules": true
-    },
-
-    // --- Python (backend) ---
-    // Adjust if your venv is elsewhere
-    "python.defaultInterpreterPath": "${workspaceFolder:backend}/.venv/bin/python",
-    "[python]": {
-      "editor.defaultFormatter": "ms-python.black-formatter"
-    },
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
-    },
-
-    // --- JavaScript/TypeScript (frontend) ---
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "prettier.useTabs": false,
-    "prettier.printWidth": 100,
-
-    // Locale/timezone
-    "files.encoding": "utf8",
-    "telemetry.telemetryLevel": "off",
-    "git.confirmSync": false
-  },
-
-  "extensions": {
-    "recommendations": [
-      "ms-python.python",
-      "ms-python.black-formatter",
-      "charliermarsh.ruff",
-      "ms-python.vscode-pylance",
-      "ms-azuretools.vscode-docker",
-      "dbaeumer.vscode-eslint",
-      "esbenp.prettier-vscode",
-      "eamodio.gitlens",
-      "humao.rest-client"
-    ]
-  },
-
-  "launch": {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "name": "Backend: Django",
-        "type": "python",
-        "request": "launch",
-        "program": "${workspaceFolder:backend}/manage.py",
-        "args": ["runserver", "8000"],
-        "cwd": "${workspaceFolder:backend}",
-        "django": true,
-        "console": "integratedTerminal",
-        "justMyCode": true,
-        "env": {
-          "DJANGO_SETTINGS_MODULE": "insurance_project.settings"
-        }
-      },
-      {
-        "name": "Frontend: Chrome (3000)",
-        "type": "pwa-chrome",
-        "request": "launch",
-        "url": "http://localhost:3000",
-        "webRoot": "${workspaceFolder:frontend}/src"
-      },
-      {
-        "name": "Frontend: Chrome (5173)",
-        "type": "pwa-chrome",
-        "request": "launch",
-        "url": "http://localhost:5173",
-        "webRoot": "${workspaceFolder:frontend}/src"
-      }
+    "python.defaultInterpreterPath": "${workspaceFolder:backend}\\.venv\\Scripts\\python.exe",
+    "python.analysis.extraPaths": [
+      "${workspaceFolder:backend}",
+      "${workspaceFolder:backend}\\insurance_project"
     ],
-    "compounds": [
-      {
-        "name": "Debug Full Stack (Django + Frontend)",
-        "configurations": ["Backend: Django", "Frontend: Chrome (3000)"]
-      }
-    ]
-  },
-
-  "tasks": {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "Backend: install deps",
-        "type": "shell",
-        "command": "pip install -r requirements.txt",
-        "options": { "cwd": "${workspaceFolder:backend}" }
-      },
-      {
-        "label": "Backend: runserver",
-        "type": "shell",
-        "command": "python manage.py runserver 8000",
-        "options": { "cwd": "${workspaceFolder:backend}" },
-        "problemMatcher": []
-      },
-      {
-        "label": "Frontend: install deps",
-        "type": "shell",
-        "command": "npm install",
-        "options": { "cwd": "${workspaceFolder:frontend}" }
-      },
-      {
-        "label": "Frontend: start (npm start)",
-        "type": "shell",
-        "command": "npm start",
-        "options": { "cwd": "${workspaceFolder:frontend}" },
-        "problemMatcher": []
-      },
-      {
-        "label": "Frontend: start (npm run dev)",
-        "type": "shell",
-        "command": "npm run dev",
-        "options": { "cwd": "${workspaceFolder:frontend}" },
-        "problemMatcher": []
-      },
-      {
-        "label": "Start Both (CRA on 3000)",
-        "dependsOn": ["Backend: runserver", "Frontend: start (npm start)"],
-        "dependsOrder": "parallel"
-      }
-    ]
+    "python.analysis.diagnosticSeverityOverrides": {
+      "reportMissingImports": "warning"
+    }
   }
 }
+
 
