@@ -1,0 +1,14 @@
+{
+  "venvPath": ".",
+  "venv": ".venv",
+  "pythonVersion": "3.11",
+  "reportMissingImports": "warning",
+  "executionEnvironments": [
+    {
+      "root": "./insurance_project",
+      "extraPaths": ["./insurance_project"]
+    }
+  ]
+}
+
+

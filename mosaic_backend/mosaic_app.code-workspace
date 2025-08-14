@@ -1,0 +1,18 @@
+{
+  "folders": [
+    { "name": "backend", "path": "backend" },
+    { "name": "frontend", "path": "frontend" }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "${workspaceFolder:backend}\\.venv\\Scripts\\python.exe",
+    "python.analysis.extraPaths": [
+      "${workspaceFolder:backend}",
+      "${workspaceFolder:backend}\\insurance_project"
+    ],
+    "python.analysis.diagnosticSeverityOverrides": {
+      "reportMissingImports": "warning"
+    }
+  }
+}
+
+
